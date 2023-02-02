@@ -82,10 +82,10 @@ Does she/he want to have a standalone application (frondend, terminal,...?), or 
 API. Thereby it can be easily updated, regularily maintained and continiously optimized.
 
 **Lifecycle / Maintainance.** We should ask the customer to provide us with the data he wants to get the prediction for in order
-to get a deeper insight into the issue/problem. Maybe the trained model has been overfitted. Maybe the new data contains outliers.
-Maybe we can get more samples to train the model on, or updated (real-time) data from real estate platforms since the housing market
-is evolving rapidly. Further we could revise the data and model quality as well as the bias/variance tradeoff.
-We could further propose to get more samples and features (open data), do further feature engineering (distance to city centers,
-sea, public transport, schools, and other urban infrastructures) and thereupon retrain the model.
+to get a deeper insight into the problem. Maybe the trained model has been overfitted. Maybe the new data contains outliers. Since
+the housing market is evolving rapidly, we should try to get more samples to train the model on, such as real-time data from online
+real estate platforms. We could further propose to get more features (open data) and do further feature engineering (distance to city centers,
+sea, public transport, schools, and other urban infrastructures). Finally we should revise the data and model quality as well as
+the bias/variance tradeoff and thereupon retrain the model.
 
 """)
