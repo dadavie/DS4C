@@ -9,10 +9,10 @@ st.set_page_config(page_title="About")
 
 st.markdown("""
 
-# About
+# About.
 Hi, my name is *David Schildberger*. I’m an architect and data scientist with a PhD from the ETH Zürich (Department of Architecture, Chair of Digital Architectonics)
 with a strong theoretical background as well as practical experience working on various data based applications. A revised version
-of my PhD “On Food — Land- and City-Scapes in Digital Architectonics. A Thought Experiment” is forthcoming in the Applied Virtuality
+of my PhD *“On Food — Land- and City-Scapes in Digital Architectonics. A Thought Experiment”* is forthcoming in the Applied Virtuality
 Book Series (Birkhäuser) edited by Ludger Hovestadt and Vera Bühlmann in 2023. In order to push my technical skills further I
 recently completed a 9 weeks Le Wagon bootcamp. I plan to bring strong communication, visualization and storytelling skills
 combined with strong passion for data and information technologies to a dynamic team.

@@ -12,7 +12,7 @@ https://dadavie-ds4c-home-dgr1wb.streamlit.app
 
 ### How to Install
 
-To install this package with pip run:
+Install streamlit package with pip run:
 
 `pip install streamlit`
 
@@ -23,3 +23,7 @@ Download repository, go to folder and start the app with
 ```python
 streamlit run home.py
 ```
+
+## ds4c - jupyter notebook (alternative):
+
+A Jupyter Notebook with the assignment can be found in the folder /Notebooks
