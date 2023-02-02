@@ -23,36 +23,36 @@ st.markdown("""
 
 ## *Concept / Data and Model*
 
-**Problem / Definition.** The task of predicting house prices is a regression problem since the target *y* is a continious
-variable. It can be handled with supervised learning models that use existing *X / y* for training.
+**Problem / Definition.** The task of predicting house prices is a regression problem as the target *y* is a continious
+variable. It can be addressed using supervised learning models with existing *X / y* data for training.
 
-**Features / Preprocessing.** The most promissing features *X* for a prediction model to start with are the MedInc
+**Features / Preprocessing.** Promissing features *X* for the prediction model are the MedInc
 (median income in each block group) as well as the features Latitude and Longitude (geo-information).
-These are on the one hand common factors that influence house prices but also the EDA supports this hypothesis.
+These are common factors that influence house prices but also the EDA supports this hypothesis.
 
-Concerning the preprocessing of the data, there are no duplicates and no missing values (no imputation necessary)
-though we need a strategy for the outliers of various features. Therefore, in a first attempt, we could make use of
+Concerning the preprocessing of the data; there are no duplicates and no missing values (no imputation necessary).
+However, we need a strategy for the outliers of certain features. Therefore, in a first attempt, we could make use of
 a Robust Scaler for MedInc (ev. log(feature) if the data is still skewed) and get rid of features such as AveRooms,
 AveBedrms, Population and AveOccup, since they could be interpreted as not primarily important due to the obvious
-prevalence of other typologies (ex. hotels). We could also try to balance (undersample) the target MedHouseVal since the
+prevalence of other typologies (ex. hotels) in the dataset. We could also try to balance (undersample) the target MedHouseVal since the
 prices above 500k are seemingly cumulated and therefore not well distributed.
 
-Further we do some feature engineering for Latitude and Longitude (instead of using a Standard Scaler) - since lat/lon
+Feature engineering may be necessary for Latitude and Longitude (instead of using a Standard Scaler) - since lat/lon
 are cyclical features; try to either cluster them via Kmeans (or SOM, see below) and get the distances from the points to
 the centers as features or extract X, Y, and Z in order to be able to normalize them (x = cos(lat) * cos(lon) //
 y = cos(lat) * sin(lon) // z = sin(lat)).
 
-**Algorithms / Models.** I would propose to start with a simple linear regression model as a baseline but move on to models
-such as *Ridge (L2 regularization), Lasso (L1 regularization, ElasticNet (L1 and L2 regularization)* with k-fold cross
-validation in order to avoid overfitting due to the fact that the dataset is quite small. I would alternatively also try to train
-the models on all the features in order to find out more about a potential multicollienarity of certain features (ex. rooms).
+**Algorithms / Models.** A simple linear regression model is proposed as a baseline. Models such as *Ridge (L2 regularization),
+Lasso (L1 regularization, ElasticNet (L1 and L2 regularization)* with k-fold cross validation might prevent us from overfitting
+due to the fact that the dataset is quite small. I would alternatively also propose to train the models on all the features
+in order to find out more about a potential multicollienarity of certain features (ex. rooms).
 
-In order to increase the complexity of the model I would propose to try other approaches such as *Decission Trees
-and Ensemble Methods (Random Forrest, GradientBoosting, Xgboost...all made to find non-linear relationships)* with
-various hyperparameters in a RandomizedSearchCV and/or GridSearchCV (again check feature
-importances and/or permutation -> in general less features allows for more interpretability, is faster to train
-(speed, computational costs) and easier to implement and maintain in production). However, since there are not too many
-features (as well as samples) in our dataset, the computational part will be easily manageable.
+In order to find out more about non-linear relationships we should increase the complexity of the applied ML models.
+Therefore I would propose to try also other algorithms and attempts such as *Decission Trees and Ensemble Methods
+(Random Forrest, GradientBoosting, Xgboost...)* with various hyperparameters in a RandomizedSearchCV and/or GridSearchCV
+(again check feature importances and/or permutation -> in general less features allows for more interpretability, is
+faster to train (speed, computational costs) and easier to implement and maintain in production). However,
+since there are not too many features (as well as samples) in our dataset, the computational part will be easily manageable.
 
 As another alternative approach I would suggest using *SOM (Self-organizing-maps)* for clustering (unsupervised)
 of the features (dealing with outliers) and the prediction part (supervised). SOM's allow us to map
@@ -76,9 +76,9 @@ proper coding style, write a README.md (description), check requirements.txt (pa
 Makefiles (command line) and also by testing the code (make test files) as well as the package on other machines/operating systems.
 
 **Product / Shipment.** The model could be shipped as a web application made with Streamlit (or flask etc...) where the
-customer can input new data and get a prediction from the pre-trained model. Howeber all this depends on the needs of the customer.
+customer can input new data and get a prediction from the pre-trained model. However all this depends on the needs of the customer.
 Does she/he want to have a standalone application (frondend, terminal,...?), or use the model embedded in another application
-(CAD/BIM software, Rhino 3D (Grasshopper), Blender 3D...?). The model could also run on the cloud so that it can be used via an
+(CAD/BIM/3D software). The model could also run on the cloud so that it can be used via an
 API. Thereby it can be easily updated, regularily maintained and continiously optimized.
 
 **Lifecycle / Maintainance.** We should ask the customer to provide us with the data he wants to get the prediction for in order
