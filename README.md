@@ -1,1 +1,4 @@
-# ds4c - Assignment: Data Scientist 4 Construction
+# Assignment: Data Scientist 4 Construction
+
+Data Exploration and Data Science Product
+
