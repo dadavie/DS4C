@@ -12,14 +12,14 @@ st.markdown("""
 # Part B - Data Science Product
 
 ## *Question / How can we predict house prices?*
-- What sort of Machine Learning problem is this?
-- What features would you use as input to solve this problem? Why those?
-- What algorithm would you use to solve this problem? Why this algorithm?
-- How would you set up training and evaluation?
-- How would you assess the performance of your solution?
-- How would you assess the quality of your source code?
-- How would you ship your trained ML model to the customer?
-- Two week after shipping your product your customer calls you and complains about low accuracy of your product. How would you react?
+- What sort of **Machine Learning** problem is this?
+- What **features** would you use as input to solve this problem? Why those?
+- What **algorithm** would you use to solve this problem? Why this algorithm?
+- How would you set up **training and evaluation**?
+- How would you assess the **performance** of your solution?
+- How would you assess the **quality** of your source code?
+- How would you **ship your trained ML model** to the customer?
+- Two week after shipping your product your customer calls you and **complains about low accuracy** of your product. How would you react?
 
 ## *Concept / Data and Model*
 
