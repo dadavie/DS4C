@@ -38,7 +38,7 @@ prevalence of other typologies (ex. hotels) in the dataset. We could also try to
 prices above 500k are seemingly cumulated and therefore not well distributed.
 
 Feature engineering may be necessary for Latitude and Longitude (instead of using a scaler) - since lat/lon
-are cyclical features; try to either cluster them via Kmeans (or SOM, see below) and get the distances from the points to
+are cyclical features; try to either cluster them via K-means (or SOM, see below) and get the distances from the points to
 the centers as features or extract X, Y, and Z in order to be able to normalize them (x = cos(lat) * cos(lon) //
 y = cos(lat) * sin(lon) // z = sin(lat)).
 
