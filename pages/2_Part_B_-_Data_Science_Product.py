@@ -45,7 +45,7 @@ y = cos(lat) * sin(lon) // z = sin(lat)).
 **Algorithms / Models.** A simple linear regression model is proposed as a baseline. Models such as *Ridge (L2 regularization),
 Lasso (L1 regularization, ElasticNet (L1 and L2 regularization)* with k-fold cross validation might prevent us from overfitting
 due to the fact that the dataset is quite small. I would alternatively also propose to train the models on all the features
-in order to find out more about a potential multicollienarity of certain features (ex. rooms).
+in order to find out more about a potential multicollinearity of certain features (ex. rooms).
 
 In order to find out more about non-linear relationships we should increase the complexity of the applied ML models.
 Therefore I would propose to try also other algorithms and attempts such as *Decission Trees and Ensemble Methods
