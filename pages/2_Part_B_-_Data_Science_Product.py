@@ -23,10 +23,10 @@ st.markdown("""
 
 ## *Concept / Data and Model*
 
-**Problem / Definition.** The task of predicting house prices is a regression problem as the target *y* is a continious
+**Problem / Definition.** The task of predicting house prices is a regression problem as the target *y* is a continuous
 variable. It can be addressed using supervised learning models with existing *X / y* data for training.
 
-**Features / Preprocessing.** Promissing features *X* for the prediction model are the MedInc
+**Features / Preprocessing.** Promising features *X* for the prediction model are the MedInc
 (median income in each block group) as well as the features Latitude and Longitude (geo-information).
 These are common factors that influence house prices but also the EDA supports this hypothesis.
 
@@ -49,7 +49,7 @@ in order to find out more about a potential multicollienarity of certain feature
 
 In order to find out more about non-linear relationships we should increase the complexity of the applied ML models.
 Therefore I would propose to try also other algorithms and attempts such as *Decission Trees and Ensemble Methods
-(Random Forrest, GradientBoosting, Xgboost...)* with various hyperparameters in a RandomizedSearchCV and/or GridSearchCV
+(Random Forrest, GradientBoosting, XGboost...)* with various hyperparameters in a RandomizedSearchCV and/or GridSearchCV
 (again check feature importances and/or permutation -> in general less features allows for more interpretability, is
 faster to train (speed, computational costs) and easier to implement and maintain in production). However,
 since there are not too many features (as well as samples) in our dataset, the computational part will be easily manageable.
@@ -62,26 +62,26 @@ distribution/weight/importance of the features and last but not least further pr
 (best matching units) of future data samples.
 
 **Train / Evaluation.** Make a train/validation/test split (70/15/15) of X (features) and y (target) - in order to avoid
-data leackage (never use the test-set for evaluation). At best use k-fold cross validation and pipelines with fit - transform.
+data leakage (never use the test-set for evaluation). At best use k-fold cross validation and pipelines with fit - transform.
 Besides the performance metrics also check fit and score time in order to learn more about the computational performance of each model.
 
 **Performance / Metrics.** As a performance metrics I would propose MSE/RMSE (comparability of different models) and R2
 (goodness-of-fit, interpretability). Further check the learning curves of each model and its hyperparameters (see that
-they converge at a high score) in order to find a proper bias / variance tradeoff alongside further hypterparameter tuning.
+they converge at a high score) in order to find a proper bias / variance tradeoff alongside further hyperparameter tuning.
 
 **Code / Qualities.** In order to check the quality of my code I would revise it (make functions, modules -> finally
 create a package - setup.py) following best practices such as extensive commenting, using descriptive variable names,
 proper coding style, write a README.md (description), check requirements.txt (package dependencies), make .env/.envrc/direnv
-(environment variables, behaviours, resources, credentials - especially if we want to put the model on the cloud), use
+(environment variables, behaviors, resources, credentials - especially if we want to put the model on the cloud), use
 Makefiles (command line) and also by testing the code (make test files) as well as the package on other machines/operating systems.
 
 **Product / Shipment.** The model could be shipped as a web application made with Streamlit (or flask etc...) where the
 customer can input new data and get a prediction from the pre-trained model. However all this depends on the needs of the customer.
-Does she/he want to have a standalone application (frondend, terminal,...?), or use the model embedded in another application
+Does she/he want to have a standalone application (frontend, terminal,...?), or use the model embedded in another application
 (CAD/BIM/3D software). The model could also run on the cloud so that it can be used via an
-API. Thereby it can be easily updated, regularily maintained and continiously optimized.
+API. Thereby it can be easily updated, regularly maintained and continuously optimized.
 
-**Lifecycle / Maintainance.** We should ask the customer to provide us with the data he wants to get the prediction for in order
+**Lifecycle / Maintenance.** We should ask the customer to provide us with the data he wants to get the prediction for in order
 to get a deeper insight into the problem. Maybe the trained model has been overfitted. Maybe the new data contains outliers. Since
 the housing market is evolving rapidly, we should try to get more samples to train the model on, such as real-time data from online
 real estate platforms. We could further propose to get more features (open data) and do further feature engineering (distance to city centers,
