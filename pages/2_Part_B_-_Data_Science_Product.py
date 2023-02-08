@@ -34,7 +34,7 @@ Concerning the preprocessing of the data; there are no duplicates and no missing
 However, we need a strategy for the outliers of certain features. Therefore, in a first attempt, we could make use of
 a Robust Scaler for MedInc (ev. log(feature) if the data is still skewed) and get rid of features such as AveRooms,
 AveBedrms, Population and AveOccup, since they could be interpreted as not primarily important due to the obvious
-prevalence of other typologies (ex. hotels) in the dataset. We could also try to balance (undersample) the target MedHouseVal since the
+prevalence of other typologies (ex. hotels) in the dataset. We could also try to balance (undersampling) the target MedHouseVal since the
 prices above 500k are seemingly cumulated and therefore not well distributed.
 
 Feature engineering may be necessary for Latitude and Longitude (instead of using a scaler) - since lat/lon
